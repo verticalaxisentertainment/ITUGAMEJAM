@@ -5,27 +5,37 @@ using UnityEngine;
 
 public class Charachter : MonoBehaviour
 {
-    private CharacterController characterController;
+    private Rigidbody rigidbody;
+    public ObjectTimeEntegration timeManager;
     public Camera camera;
-    public float speed;
+    public float moveSpeed = 3;
+    private float speed;
+    public float jumpStrength;
+    public bool isGrounded;
    
 
     // Start is called before the first frame update
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
+        rigidbody = GetComponent<Rigidbody>();
+        timeManager = GameObject.FindGameObjectWithTag("TimeManager").GetComponent<ObjectTimeEntegration>();
     }
 
     // Update is called once per frame
     void Update()
     {
         moveRelativeToCamera();
+        timeTravel();
     }
 
     void moveRelativeToCamera()
     {
+        sprintNJumpLogic();
+
+        // Input process
         float playerVertical = Input.GetAxis("Vertical");
         float playerHorizontal = Input.GetAxis("Horizontal");
+        // Camera relativity and canceling  y camera axis for movement
         Vector3 forward = camera.transform.forward;
         Vector3 right = camera.transform.right;
         forward.y = 0f;
@@ -33,9 +43,69 @@ public class Charachter : MonoBehaviour
         forward = forward.normalized;
         right = right.normalized;
 
+        // Moving player
+       
         Vector3 move = forward * playerVertical + right * playerHorizontal;
-        characterController.Move(move * speed * Time.deltaTime);
+
+        transform.position += move * speed * Time.deltaTime;
     }
 
-    
+
+    void sprintNJumpLogic()
+    {
+        //Sprinting logic
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            speed = moveSpeed * 2;
+        }
+        else
+        {
+            speed = moveSpeed;
+        }
+        // Jump Logic
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            rigidbody.AddForce(Vector3.up * jumpStrength, ForceMode.Impulse);
+            isGrounded = false;
+        }
+
+    }
+
+
+    // Collision Related logics
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.transform.tag == "Ground")
+        {
+            isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.transform.tag == "Ground")
+        {
+            isGrounded = false;
+        }
+    }
+
+
+    void timeTravel()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (timeManager.isFuture)
+            {
+                transform.position = new Vector3(transform.position.x, 101.5f, transform.position.z);
+                timeManager.isFuture = false;
+            }
+            else
+            {
+                transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
+                timeManager.isFuture = true;
+            }
+        }
+    }
+
 }

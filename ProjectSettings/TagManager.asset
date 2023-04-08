@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Missile
   - Movable
+  - Ground
+  - TimeManager
   layers:
   - Default
   - TransparentFX
