@@ -6,6 +6,7 @@ using UnityEngine;
 public class Charachter : MonoBehaviour
 {
     private Rigidbody rigidbody;
+    public ObjectTimeEntegration timeManager;
     public Camera camera;
     public float moveSpeed = 3;
     private float speed;
@@ -17,12 +18,14 @@ public class Charachter : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        timeManager = GameObject.FindGameObjectWithTag("TimeManager").GetComponent<ObjectTimeEntegration>();
     }
 
     // Update is called once per frame
     void Update()
     {
         moveRelativeToCamera();
+        timeTravel();
     }
 
     void moveRelativeToCamera()
@@ -84,6 +87,24 @@ public class Charachter : MonoBehaviour
         if (collision.transform.tag == "Ground")
         {
             isGrounded = false;
+        }
+    }
+
+
+    void timeTravel()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (timeManager.isFuture)
+            {
+                transform.position = new Vector3(transform.position.x, 101.5f, transform.position.z);
+                timeManager.isFuture = false;
+            }
+            else
+            {
+                transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
+                timeManager.isFuture = true;
+            }
         }
     }
 
