@@ -40,6 +40,7 @@ public class TimeMachineHandler : MonoBehaviour
             if (!grabbedRB)
             {
                 lineRenderer.enabled = true;
+
                 RaycastHit hit;
                 if (Physics.Raycast(UnityEngine.Camera.main.transform.position, UnityEngine.Camera.main.transform.forward, out hit, float.MaxValue))
                 {

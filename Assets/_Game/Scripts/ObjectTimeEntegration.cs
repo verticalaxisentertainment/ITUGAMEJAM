@@ -35,6 +35,7 @@ public class ObjectTimeEntegration : MonoBehaviour
             {
                 Items[0] = timeMachineHandler.HoldedObject();
 
+
                 foreach (GameObject o in futureList)
                 {
                     if (Items[0] == o)
@@ -44,13 +45,23 @@ public class ObjectTimeEntegration : MonoBehaviour
                     }
                 }
                 Debug.Log(Items[1].ToSafeString());
-                Items[1].transform.position = new Vector3(future.transform.position.x,future.transform.position.y+102,future.transform.position.z);
+                Items[1].transform.position = new Vector3(Items[0].transform.position.x, Items[0].transform.position.y+100,Items[0].transform.position.z);
             }
             else
             {
-                //Item[0] = future.gameItem["ID"];
-                //Item[1] = past.gameItem["ID"];
-                //Item[1].transform.position = future.transform.position;
+                Items[0] = timeMachineHandler.HoldedObject();
+
+
+                foreach (GameObject o in pastList)
+                {
+                    if (Items[0] == o)
+                    {
+                        listIndex = pastList.IndexOf(o);
+                        Items[1] = futureList[listIndex];
+                    }
+                }
+                Debug.Log(Items[1].ToSafeString());
+                Items[1].transform.position = new Vector3(Items[0].transform.position.x, Items[0].transform.position.y -100, Items[0].transform.position.z);
             }
         }
     }
