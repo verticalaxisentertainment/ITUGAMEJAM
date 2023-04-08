@@ -68,7 +68,7 @@ public class Charachter : MonoBehaviour
     {
         if (collision.transform.tag == "Ground")
         {
-            isGrounded = true;
+            isGrounded = false;
         }
     }
 
