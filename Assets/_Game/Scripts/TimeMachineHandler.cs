@@ -10,7 +10,7 @@ public class TimeMachineHandler : MonoBehaviour
     public static TimeMachineHandler Instance;
 
     public float maxGrabDistance = 10.0f, throwForce = 20f, lerpTime = 10f;
-    private LineRenderer lineRenderer;
+    public LineRenderer lineRenderer;
     public Transform objectHolder, topofTheMacghine;
 
     Rigidbody grabbedRB;
@@ -26,13 +26,16 @@ public class TimeMachineHandler : MonoBehaviour
     }
     void Start()
     {
-        lineRenderer = GetComponent<LineRenderer>();
     }
 
     void Update()
     {
+        if (mouseEntered && Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("basto");
+        }
         //Input.mousePosition.Set(0, 0, 0);
-        if(Input.GetMouseButtonDown(0))
+        if(!mouseEntered&&Input.GetMouseButtonDown(0))
         {
             if (!grabbedRB)
             {
@@ -63,10 +66,7 @@ public class TimeMachineHandler : MonoBehaviour
 
 
 
-        if (mouseEntered && Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("basto");
-        }
+       
     }
 
     public GameObject HoldedObject()

@@ -5,14 +5,22 @@ using UnityEngine;
 
 public class Charachter : MonoBehaviour
 {
+    public static Charachter Instance;
+
     private Rigidbody rigidbody;
     public ObjectTimeEntegration timeManager;
+    public Animator characterAnimator;
     public Camera camera;
     public float moveSpeed = 3;
     private float speed;
     public float jumpStrength;
     public bool isGrounded;
-   
+
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +32,21 @@ public class Charachter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Click();
         moveRelativeToCamera();
         timeTravel();
+    }
+
+    void Click()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            characterAnimator.SetInteger("State", 1);
+        }
+        if(Input.GetMouseButtonUp(0))
+        {
+            characterAnimator.SetInteger("State", 0);
+        }
     }
 
     void moveRelativeToCamera()
