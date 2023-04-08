@@ -23,17 +23,21 @@ public class ObjectTimeEntegration : MonoBehaviour
 
     void ObjectEntegration(bool isHolding/* , script's class type - item*/)
     {
+        GameObject[] Item = new GameObject[2];
         if(isHolding)
         {
             if(isFuture)
             {
-
+            //    Item[0] = future.gameItem["ID"];
+            //    Item[1] = past.gameItem["ID"];
+            //    Item[1].transform.position = future.transform.position;
             }
-            //Get and put two same ID'ed objects into array
-            //Check if there is more than 2 same ID'ed object
-            //If yes abort
-            //else set the x and z coordinates  of two object same
-
+            else
+            {
+                //Item[0] = future.gameItem["ID"];
+                //Item[1] = past.gameItem["ID"];
+                //Item[1].transform.position = future.transform.position;
+            }
         }
     }
 
