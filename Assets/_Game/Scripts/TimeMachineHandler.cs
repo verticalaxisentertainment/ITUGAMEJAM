@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngineInternal;
 
 public class TimeMachineHandler : MonoBehaviour
 {
@@ -41,7 +40,7 @@ public class TimeMachineHandler : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(UnityEngine.Camera.main.transform.position, UnityEngine.Camera.main.transform.forward, out hit, float.MaxValue))
                 {
-                    if (hit.rigidbody && hit.rigidbody.gameObject.CompareTag("Movable"))
+                    if (hit.rigidbody)
                     {
                         Debug.Log("var");
                         grabbedRB = hit.rigidbody;
