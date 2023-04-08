@@ -180,7 +180,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 119
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -2391,7 +2391,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1861694453}
   - component: {fileID: 1861694455}
-  - component: {fileID: 1861694454}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -2414,14 +2413,6 @@ Transform:
   m_Father: {fileID: 1333668960}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 4.121, y: 0, z: 0}
---- !u!81 &1861694454
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861694452}
-  m_Enabled: 1
 --- !u!20 &1861694455
 Camera:
   m_ObjectHideFlags: 0
