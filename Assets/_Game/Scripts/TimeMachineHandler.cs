@@ -40,7 +40,7 @@ public class TimeMachineHandler : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(UnityEngine.Camera.main.transform.position, UnityEngine.Camera.main.transform.forward, out hit, float.MaxValue))
                 {
-                    if (hit.rigidbody)
+                    if (hit.rigidbody&&hit.rigidbody.CompareTag("Movable"))
                     {
                         Debug.Log("var");
                         grabbedRB = hit.rigidbody;
