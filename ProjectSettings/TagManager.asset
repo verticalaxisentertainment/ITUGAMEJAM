@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Missile
+  - Movable
   - Ground
   - TimeManager
   layers:
@@ -15,7 +16,7 @@ TagManager:
   - Water
   - UI
   - ScientestPlayer
-  - 
+  - Table
   - 
   - 
   - 
