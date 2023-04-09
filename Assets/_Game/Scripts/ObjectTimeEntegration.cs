@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ObjectTimeEntegration : MonoBehaviour
 {
-    private TimeMachineHandler timeMachineHandler;
+    //private TimeMachineHandler timeMachineHandler;
     public bool isFuture = true;
     public Charachter charachter;
     public GameObject future;
@@ -13,13 +13,13 @@ public class ObjectTimeEntegration : MonoBehaviour
 
     void Start()
     {
-        charachter = GameObject.FindGameObjectWithTag("Player").GetComponent<Charachter>();
-        timeMachineHandler = TimeMachineHandler.Instance;
+        //charachter = GameObject.FindGameObjectWithTag("Player").GetComponent<Charachter>();
+        //timeMachineHandler = TimeMachineHandler.Instance;
     }
 
     void Update()
     {
-        ObjectEntegration(timeMachineHandler);
+        ObjectEntegration(TimeMachineHandler.Instance);
         //timeTravel();
     }
 
