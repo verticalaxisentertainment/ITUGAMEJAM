@@ -11,8 +11,8 @@ public class IntroUIManager : MonoBehaviour
 
     void Start()
     {
-        //introText.color=new Color(introText.color.r, introText.color.g,introText.color.b,0.0f);
         StartCoroutine(StartText());
+        Cursor.visible = false;
     }
 
 

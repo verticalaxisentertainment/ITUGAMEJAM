@@ -1,10 +1,8 @@
 using Cinemachine;
-using Cinemachine.Editor;
 using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
@@ -37,7 +35,21 @@ public class LevelManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Falling")
         {
             StartCoroutine(Falling());
+            Cursor.visible = false;
         }
+        if (SceneManager.GetActiveScene().name == "PastRoom")
+        {
+            StartCoroutine(StartMoving());
+            Cursor.visible = false;
+        }
+    }
+
+    public IEnumerator StartMoving()
+    {
+        yield return new WaitForSeconds(11);
+        HeadTarget.SetActive(true);
+        RightHandTarget.SetActive(false);
+        CameraManager.Instance.gameCam.Priority = 10000;
     }
 
     public IEnumerator Falling()
@@ -81,6 +93,7 @@ public class LevelManager : MonoBehaviour
         yield return HeadTarget.transform.DOMove(points[2].transform.position, 2).WaitForCompletion();
         yield return HeadTarget.transform.DOMove(points[3].transform.position, 2).WaitForCompletion();
         canSelect = true;
+        Cursor.visible = true;
     }
 
     public IEnumerator PushTheButton()
@@ -134,9 +147,9 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-         if(TimeMachineHandler.Instance.mouseEntered)
-           smokeCanvas.DOFade(1, 4);
-        else
-            smokeCanvas.DOFade(0, 1);
+            if (TimeMachineHandler.Instance.mouseEntered)
+                smokeCanvas.DOFade(1, 4);
+            else
+                smokeCanvas.DOFade(0, 1);
     }
 }
