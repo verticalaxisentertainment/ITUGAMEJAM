@@ -30,10 +30,7 @@ public class TimeMachineHandler : MonoBehaviour
 
     void Update()
     {
-        if(mouseEntered)
-            LevelManager.instance.smokeCanvas.DOFade(1, 4);
-        else
-            LevelManager.instance.smokeCanvas.DOFade(0, 1);
+       
 
         if (mouseEntered && Input.GetMouseButtonDown(0))
         {
