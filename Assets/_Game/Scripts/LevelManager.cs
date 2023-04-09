@@ -147,9 +147,12 @@ public class LevelManager : MonoBehaviour
             }
         }
 
+        if (SceneManager.GetActiveScene().name == "Beginning")
+        {
             if (TimeMachineHandler.Instance.mouseEntered)
                 smokeCanvas.DOFade(1, 4);
             else
                 smokeCanvas.DOFade(0, 1);
+        }
     }
 }

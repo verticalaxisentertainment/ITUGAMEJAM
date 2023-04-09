@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/_Game/Scenes/MainMenuNew.unity
     guid: 922fa5fb451705b43a8363c81aaaf384
   - enabled: 1
-    path: Assets/_Game/Scenes/BeginningofAll.unity
+    path: Assets/_Game/Scenes/Beginning.unity
     guid: 1fbcf8d1b0f371741b7ce75e53b3139b
   - enabled: 1
     path: Assets/_Game/Scenes/Falling.unity
