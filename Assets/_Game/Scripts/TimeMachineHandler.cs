@@ -16,7 +16,7 @@ public class TimeMachineHandler : MonoBehaviour
     Rigidbody grabbedRB;
 
     public bool grounded = false;
-    bool mouseEntered = false;
+    public bool mouseEntered = false;
 
     private Vector3 velocity;
 
@@ -30,9 +30,14 @@ public class TimeMachineHandler : MonoBehaviour
 
     void Update()
     {
+        if(mouseEntered)
+            LevelManager.instance.smokeCanvas.DOFade(1, 4);
+        else
+            LevelManager.instance.smokeCanvas.DOFade(0, 1);
+
         if (mouseEntered && Input.GetMouseButtonDown(0))
         {
-            Debug.Log("basto");
+            StartCoroutine(LevelManager.instance.PushTheButton());
         }
         //Input.mousePosition.Set(0, 0, 0);
         if(!mouseEntered&&Input.GetMouseButtonDown(0))
@@ -62,11 +67,6 @@ public class TimeMachineHandler : MonoBehaviour
                 lineRenderer.enabled = false;
             }
         }
-        
-        
-
-
-
        
     }
 

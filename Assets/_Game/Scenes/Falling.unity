@@ -5580,6 +5580,7 @@ MonoBehaviour:
     m_Bits: 0
   postProcessVolume: {fileID: 825675190}
   fadeCanvas: {fileID: 1976926760}
+  smokeCanvas: {fileID: 0}
 --- !u!4 &1811839867
 Transform:
   m_ObjectHideFlags: 0
@@ -5705,7 +5706,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976926755}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0

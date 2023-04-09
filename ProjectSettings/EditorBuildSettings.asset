@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/Scenes/Falling.unity
     guid: 2b7ea0f9424d4e04084e913584b17365
+  - enabled: 1
+    path: Assets/_Game/Scenes/MoveObjectMechanicTest.unity
+    guid: 4b9a1f7622a6fcc46b1e84b95d95e33a
   m_configObjects: {}
