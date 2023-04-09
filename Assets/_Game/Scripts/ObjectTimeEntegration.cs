@@ -66,7 +66,7 @@ public class ObjectTimeEntegration : MonoBehaviour
         }
     }
 
-    List<GameObject> getChilds(GameObject o)
+    public List<GameObject> getChilds(GameObject o)
     {
         List<GameObject> gs = new List<GameObject>();
         Transform[] ts = o.GetComponentsInChildren<Transform>();
