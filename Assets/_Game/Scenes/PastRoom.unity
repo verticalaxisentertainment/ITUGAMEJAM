@@ -6844,6 +6844,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 29ff763fcf67c484aa85623f568b0c92, type: 3}
   m_PrefabInstance: {fileID: 1913732211}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1009862277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1009862279}
+  - component: {fileID: 1009862278}
+  m_Layer: 0
+  m_Name: ProgressManager
+  m_TagString: ProgressManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1009862278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009862277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20fb4447aee27b448de014ca067e895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleObjects: []
+  isPassed: 0
+  objectTimeEntegration: {fileID: 0}
+--- !u!4 &1009862279
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009862277}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.59444, y: 100.2084, z: -30}
+  m_LocalScale: {x: 1, y: 1, z: 2.3302}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1603454700}
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1017513797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10763,6 +10811,65 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593699954}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1603454699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1603454700}
+  - component: {fileID: 1603454702}
+  - component: {fileID: 1603454701}
+  m_Layer: 0
+  m_Name: Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1603454700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603454699}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.768, y: 0.101, z: -0.11}
+  m_LocalScale: {x: 1.63, y: 1, z: 2.25}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1009862279}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1603454701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603454699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ec416e786ed914d8d621026be81f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleLogic: {fileID: 0}
+--- !u!65 &1603454702
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603454699}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.18, y: 0.21, z: 0.33}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1605202482
 GameObject:
   m_ObjectHideFlags: 0
